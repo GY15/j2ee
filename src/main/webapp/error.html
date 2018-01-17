@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Order</title>
+</head>
+
+
+<body style="text-align: center">
+<div style="margin-left: 40%">
+    <table border="1" style="text-align: center">
+        <tr>
+            <th>订单编号</th>
+            <th>物品名称</th>
+            <th>数量</th>
+            <th>价格</th>
+            <th>订单时间</th>
+        </tr>
+        <tr>
+            <td>100</td>
+            <td>200</td>
+            <td>300</td>
+            <td>200</td>
+            <td>300</td>
+        </tr>
+    </table>
+</div>
+
+<div class="pages">
+    <button id="1" onclick=gotoPage()>1</button>
+    <button id="2" onclick=gotoPage()>2</button>
+    <button id="3" onclick=gotoPage()>3</button>
+    <button id="4" onclick=gotoPage()>4</button>
+    <button id="5" onclick=gotoPage()>5</button>
+
+</div>
+</body>
+
+<script type="text/javascript">
+    function gotoPage() {
+        alert(event.target.id);
+        window.location.href= event.target.id;
+    }
+    var jsPost = function(action, values) {
+        var id = Math.random();
+        document.write('<form id="post' + id + '" name="post'+ id +'" action="' + action + '" method="post">');
+        for (var key in values) {
+            document.write('<input type="hidden" name="' + key + '" value="' + values[key] + '" />');
+        }
+        document.write('</form>');
+        document.getElementById('post' + id).submit();
+    }
+
+</script>
+</html>
