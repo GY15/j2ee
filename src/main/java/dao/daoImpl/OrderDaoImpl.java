@@ -46,7 +46,7 @@ public class OrderDaoImpl extends BaseDaoImpl implements OrderDao {
             return result.size();
         } catch (Exception e) {
             e.printStackTrace();
-            return 0;
+            return -1;
         }
     }
 
